@@ -1,0 +1,13 @@
+<div class="description">
+    <ng-container *ngIf="selectedRow?.details;else no_desc">
+        <div style="padding: 1rem;">
+            {{selectedRow?.details}}
+        </div>
+    </ng-container>
+
+    <ng-template #no_desc>
+        <div class="no_desc">
+            <span style="color: #000;opacity: .7;">No description yet</span> <span style="font-weight: 600;">&nbsp;+Add Description</span>
+        </div>
+    </ng-template>
+</div>

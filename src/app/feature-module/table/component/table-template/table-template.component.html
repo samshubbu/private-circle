@@ -1,0 +1,27 @@
+<div class="table_wrapper">
+    <table cellpadding="10">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>List Name</th>
+                <th style="text-align: right;">No. of Entities</th>
+                <th>Actions</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of listData | async | search : searchText; let i = index" (click)="getDetails(data)" [ngClass]="{active_row: selected_row_id === data.id}">
+                <td>{{ data.date }}</td>
+                <td style="font-weight: 700;"><span [ngStyle]="{color: !data.enteries ? '#44b4e2' : ''}">{{ data.list_names }}</span></td>
+                <td style="text-align: right;">{{data.enteries || 0 }}</td>
+                <td style="opacity: .5;">
+                    <i class="fa fa-envelope-open-o" aria-hidden="true"></i>
+                    <i *ngIf="data.enteries" class="fa fa-share-alt" aria-hidden="true" style="margin-left: 1rem;"></i>
+                    <i *ngIf="data.enteries" class="fa fa-pencil" style="margin-left: 1rem;"></i>
+                    <i *ngIf="data.enteries" class="fa fa-trash-o" style="margin-left: 10px;"></i>
+                </td>
+                <td style="text-align: center;font-size: 15px;"><span [ngClass]="{selected_details: selected_row_id === data.id}">Details</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

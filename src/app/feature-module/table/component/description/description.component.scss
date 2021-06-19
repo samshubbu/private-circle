@@ -1,0 +1,19 @@
+$description-color: #1a8a85;
+
+.description {
+  margin: 1rem;
+  font-size: 14px;
+  letter-spacing: 0.6px;
+  text-align: center;
+  & > div {
+    color: $description-color;
+    padding: 1rem;
+  }
+
+  .no_desc {
+    background-color: #e4e4e491;
+    & span {
+      color: $description-color;
+    }
+  }
+}

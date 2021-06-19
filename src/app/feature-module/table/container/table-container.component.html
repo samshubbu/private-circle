@@ -1,0 +1,30 @@
+<div class="table">
+    <div class="table_header">
+        <div class="table_header_actions">
+            <button class="lists">
+                <i class="fa fa-list-ul mr" aria-hidden="true"></i>
+                saved lists
+            </button>
+            <button class="filters">
+                <i class="fa fa-filter mr" aria-hidden="true"></i>
+                saved filters
+            </button>
+            <button class="history">
+                <i class="fa fa-history mr" aria-hidden="true"></i>
+                search history
+            </button>
+        </div>
+        <div style="width: 40%;">
+            <input class="table_header_search" type="search" [(ngModel)]="searchText" placeholder="Search...">
+        </div>
+    </div>
+
+    <div class="table_body">
+        <div class="table_body_list">
+            <app-table-template [listData]="tableData" [searchText]="searchText" (emitSelectedDetails)="selectedList($event)"></app-table-template>
+        </div>
+        <div class="table_body_list_description">
+            <app-description [selectedRow]="selectedRow"></app-description>
+        </div>
+    </div>
+</div>
